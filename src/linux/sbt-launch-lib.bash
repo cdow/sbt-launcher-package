@@ -59,8 +59,8 @@ jar_url () {
 }
 
 jar_file () {
-  if [[ -f "/usr/lib/sbt/$1/sbt-launch.jar" ]]; then
-    echo "/usr/lib/sbt/$1/sbt-launch.jar"
+  if [[ -f "/usr/share/sbt/$1/sbt-launch.jar" ]]; then
+    echo "/usr/share/sbt/$1/sbt-launch.jar"
   else
     echo "$script_dir/.lib/$1/sbt-launch.jar"
   fi
