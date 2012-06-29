@@ -83,9 +83,8 @@ object Packaging {
       ) withPerms "0644" withConfig("noreplace")
     },
     linuxPackageMappings <+= (sbtLaunchJar, sourceDirectory in Linux, sbtVersion) map { (jar, dir, v) =>
-      packageMapping(dir -> "/usr/lib/sbt",
-                     dir -> ("/usr/lib/sbt/" + v),
-                     jar -> ("/usr/lib/sbt/"+v+"/sbt-launch.jar")) withPerms "0755"
+      packageMapping(dir -> ("/usr/share/sbt/" + v),
+                     jar -> ("/usr/share/sbt/"+v+"/sbt-launch.jar")) withPerms "0755"
     },
     // DEBIAN SPECIFIC    
     name in Debian := "sbt",
